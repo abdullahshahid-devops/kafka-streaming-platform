@@ -1,0 +1,46 @@
+Kafka Streaming Platform - Verification Evidence
+2026-10-17T20:15:01+00:00
+
+=== Compose Configuration ===
+PASS
+
+=== Service Status ===
+NAME                                                  IMAGE                                  COMMAND                  SERVICE            CREATED          STATUS                    PORTS
+754e51ec03dd_kafka-streaming-lab-consumer-1           kafka-streaming-lab-consumer           "python -u consumer.…"   consumer           24 minutes ago   Up 15 minutes             
+b1c413fcfcc9_kafka-streaming-lab-stream-processor-1   kafka-streaming-lab-stream-processor   "python -u processor…"   stream-processor   24 minutes ago   Up 15 minutes             
+c864fdd09ff9_kafka-streaming-lab-producer-1           kafka-streaming-lab-producer           "python -u producer.…"   producer           24 minutes ago   Up 10 minutes             
+kafka-streaming-lab-kafka-1                           confluentinc/cp-kafka:7.4.0            "/etc/confluent/dock…"   kafka              17 minutes ago   Up 17 minutes (healthy)   0.0.0.0:9092->9092/tcp, [::]:9092->9092/tcp, 0.0.0.0:29092->29092/tcp, [::]:29092->29092/tcp
+kafka-streaming-lab-kafka-ui-1                        provectuslabs/kafka-ui:latest          "/bin/sh -c 'java --…"   kafka-ui           29 minutes ago   Up 25 minutes             0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp
+kafka-streaming-lab-zookeeper-1                       confluentinc/cp-zookeeper:7.4.0        "/etc/confluent/dock…"   zookeeper          26 minutes ago   Up 26 minutes (healthy)   2181/tcp, 2888/tcp, 3888/tcp
+
+=== Recent Application Logs ===
+b1c413fcfcc9_kafka-streaming-lab-stream-processor-1  | Processed sensor=sensor-03 average=27.88°C window=10
+b1c413fcfcc9_kafka-streaming-lab-stream-processor-1  | Processed sensor=sensor-03 average=28.08°C window=10
+b1c413fcfcc9_kafka-streaming-lab-stream-processor-1  | Processed sensor=sensor-02 average=23.44°C window=10
+b1c413fcfcc9_kafka-streaming-lab-stream-processor-1  | Processed sensor=sensor-03 average=27.73°C window=10
+b1c413fcfcc9_kafka-streaming-lab-stream-processor-1  | Processed sensor=sensor-02 average=23.99°C window=10
+b1c413fcfcc9_kafka-streaming-lab-stream-processor-1  | Processed sensor=sensor-02 average=25.23°C window=10
+b1c413fcfcc9_kafka-streaming-lab-stream-processor-1  | Processed sensor=sensor-03 average=27.99°C window=10
+b1c413fcfcc9_kafka-streaming-lab-stream-processor-1  | Processed sensor=sensor-03 average=28.32°C window=10
+b1c413fcfcc9_kafka-streaming-lab-stream-processor-1  | Processed sensor=sensor-03 average=28.20°C window=10
+b1c413fcfcc9_kafka-streaming-lab-stream-processor-1  | Processed sensor=sensor-03 average=29.02°C window=10
+754e51ec03dd_kafka-streaming-lab-consumer-1          | Received sensor=sensor-02 temperature=30.04°C partition=0 offset=846
+754e51ec03dd_kafka-streaming-lab-consumer-1          | WARNING: High temperature 30.04°C from sensor-02 at server-room
+754e51ec03dd_kafka-streaming-lab-consumer-1          | Received sensor=sensor-02 temperature=34.36°C partition=0 offset=847
+754e51ec03dd_kafka-streaming-lab-consumer-1          | WARNING: High temperature 34.36°C from sensor-02 at server-room
+754e51ec03dd_kafka-streaming-lab-consumer-1          | Received sensor=sensor-03 temperature=34.57°C partition=0 offset=848
+754e51ec03dd_kafka-streaming-lab-consumer-1          | WARNING: High temperature 34.57°C from sensor-03 at office
+754e51ec03dd_kafka-streaming-lab-consumer-1          | Received sensor=sensor-03 temperature=24.24°C partition=0 offset=849
+754e51ec03dd_kafka-streaming-lab-consumer-1          | Received sensor=sensor-03 temperature=26.54°C partition=0 offset=850
+754e51ec03dd_kafka-streaming-lab-consumer-1          | Received sensor=sensor-03 temperature=34.73°C partition=0 offset=851
+754e51ec03dd_kafka-streaming-lab-consumer-1          | WARNING: High temperature 34.73°C from sensor-03 at office
+c864fdd09ff9_kafka-streaming-lab-producer-1          | Published {'sensor_id': 'sensor-03', 'temperature': 26.71, 'humidity': 65.46, 'location': 'office', 'timestamp': '2026-10-17T20:14:52.354778+00:00'} (partition=0, offset=842)
+c864fdd09ff9_kafka-streaming-lab-producer-1          | Published {'sensor_id': 'sensor-03', 'temperature': 25.08, 'humidity': 42.68, 'location': 'office', 'timestamp': '2026-10-17T20:14:53.358123+00:00'} (partition=0, offset=843)
+c864fdd09ff9_kafka-streaming-lab-producer-1          | Published {'sensor_id': 'sensor-02', 'temperature': 28.24, 'humidity': 49.8, 'location': 'server-room', 'timestamp': '2026-10-17T20:14:54.365086+00:00'} (partition=0, offset=844)
+c864fdd09ff9_kafka-streaming-lab-producer-1          | Published {'sensor_id': 'sensor-03', 'temperature': 30.7, 'humidity': 57.19, 'location': 'office', 'timestamp': '2026-10-17T20:14:55.368741+00:00'} (partition=0, offset=845)
+c864fdd09ff9_kafka-streaming-lab-producer-1          | Published {'sensor_id': 'sensor-02', 'temperature': 30.04, 'humidity': 30.26, 'location': 'server-room', 'timestamp': '2026-10-17T20:14:56.374773+00:00'} (partition=0, offset=846)
+c864fdd09ff9_kafka-streaming-lab-producer-1          | Published {'sensor_id': 'sensor-02', 'temperature': 34.36, 'humidity': 59.7, 'location': 'server-room', 'timestamp': '2026-10-17T20:14:57.381408+00:00'} (partition=0, offset=847)
+c864fdd09ff9_kafka-streaming-lab-producer-1          | Published {'sensor_id': 'sensor-03', 'temperature': 34.57, 'humidity': 40.75, 'location': 'office', 'timestamp': '2026-10-17T20:14:58.387052+00:00'} (partition=0, offset=848)
+c864fdd09ff9_kafka-streaming-lab-producer-1          | Published {'sensor_id': 'sensor-03', 'temperature': 24.24, 'humidity': 79.64, 'location': 'office', 'timestamp': '2026-10-17T20:14:59.391228+00:00'} (partition=0, offset=849)
+c864fdd09ff9_kafka-streaming-lab-producer-1          | Published {'sensor_id': 'sensor-03', 'temperature': 26.54, 'humidity': 53.24, 'location': 'office', 'timestamp': '2026-10-17T20:15:00.395662+00:00'} (partition=0, offset=850)
+c864fdd09ff9_kafka-streaming-lab-producer-1          | Published {'sensor_id': 'sensor-03', 'temperature': 34.73, 'humidity': 34.2, 'location': 'office', 'timestamp': '2026-10-17T20:15:01.402353+00:00'} (partition=0, offset=851)
