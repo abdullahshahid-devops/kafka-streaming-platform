@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+kafka-lab-venv/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*credentials*
+
+# Local and generated files
+.DS_Store
+.idea/
+.vscode/

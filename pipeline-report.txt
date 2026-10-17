@@ -1,0 +1,110 @@
+==========================================
+ KAFKA STREAMING PIPELINE REPORT
+==========================================
+Generated: 2026-10-17T20:03:29+00:00
+Producer: stopped for final snapshot
+
+1. TOPICS
+__consumer_offsets
+ops-events
+processed-data
+sensor-data
+temp-alerts
+
+2. TOPIC PARTITION COUNTS
+--- sensor-data ---
+Partition 0: end offset 210
+Partitions: 1
+Sum of partition end offsets: 210
+--- processed-data ---
+Partition 0: end offset 213
+Partitions: 1
+Sum of partition end offsets: 213
+--- temp-alerts ---
+Partition 0: end offset 6
+Partitions: 1
+Sum of partition end offsets: 6
+--- ops-events ---
+Partition 0: end offset 5
+Partitions: 1
+Sum of partition end offsets: 5
+--- __consumer_offsets ---
+Partition 0: end offset 61
+Partition 1: end offset 0
+Partition 2: end offset 0
+Partition 3: end offset 0
+Partition 4: end offset 0
+Partition 5: end offset 0
+Partition 6: end offset 0
+Partition 7: end offset 0
+Partition 8: end offset 0
+Partition 9: end offset 0
+Partition 10: end offset 0
+Partition 11: end offset 0
+Partition 12: end offset 0
+Partition 13: end offset 0
+Partition 14: end offset 0
+Partition 15: end offset 0
+Partition 16: end offset 0
+Partition 17: end offset 0
+Partition 18: end offset 0
+Partition 19: end offset 0
+Partition 20: end offset 61
+Partition 21: end offset 0
+Partition 22: end offset 0
+Partition 23: end offset 0
+Partition 24: end offset 0
+Partition 25: end offset 0
+Partition 26: end offset 0
+Partition 27: end offset 0
+Partition 28: end offset 0
+Partition 29: end offset 0
+Partition 30: end offset 0
+Partition 31: end offset 2
+Partition 32: end offset 0
+Partition 33: end offset 0
+Partition 34: end offset 0
+Partition 35: end offset 0
+Partition 36: end offset 0
+Partition 37: end offset 0
+Partition 38: end offset 0
+Partition 39: end offset 0
+Partition 40: end offset 0
+Partition 41: end offset 2
+Partition 42: end offset 2
+Partition 43: end offset 0
+Partition 44: end offset 0
+Partition 45: end offset 0
+Partition 46: end offset 0
+Partition 47: end offset 10
+Partition 48: end offset 0
+Partition 49: end offset 0
+Partitions: 50
+Sum of partition end offsets: 138
+
+3. SENSOR CONSUMER GROUP
+
+GROUP           TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                              HOST            CLIENT-ID
+sensor-group    sensor-data     0          210             210             0               kafka-python-3.0.11-1f13e2a6-f50e-4e11-abbe-10695c76ab17 /172.18.0.4     kafka-python-3.0.11
+
+4. PROCESSOR CONSUMER GROUP
+
+GROUP           TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                              HOST            CLIENT-ID
+processor-group sensor-data     0          210             210             0               kafka-python-3.0.11-92a3eebd-52ba-42d7-a5a3-4857b5afbe1e /172.18.0.5     kafka-python-3.0.11
+
+5. KCat VALIDATION GROUP
+
+GROUP                 TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+kcat-validation-group sensor-data     0          56              210             154             -               -               -
+
+6. VALIDATION SUMMARY
+sensor-data end offset: 210 (last verified snapshot)
+processed-data end offset: 213 (last verified snapshot)
+temp-alerts end offset: 6 (last verified snapshot)
+ops-events end offset: 5 (last verified snapshot)
+Application consumer-group lag: 0 for both groups
+Processed vs sensor count difference: 3, within tolerance of 10
+kcat successfully published and consumed five keyed ops-events messages.
+
+Note: Topic counts above are refreshed when this report is generated.
+Consumer-group lag is a point-in-time measurement.
